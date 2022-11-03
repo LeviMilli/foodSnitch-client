@@ -18,7 +18,7 @@ import SignUp from "./components/Signup/Signup";
 import MyRecipeList from "./components/MyRecipeList/MyRecipeList"
 import RecipeDetails from "./components/RecipeDetails/RecipeDetails";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
-import Multiple from "./components/AddRecipe/Multiple";
+
 import EditRecipe from "./components/EditRecipe/EditRecipe";
 import RecipePictures from "./components/RecipePictures/RecipePictures";
 
@@ -196,7 +196,6 @@ axios.post(`http:///localhost:5005/api/google/info`, newUser , {withCredentials:
                 <Route path="/myrecipes" element={<MyRecipeList/>} />
                 <Route path="/recipe/:id" element={<RecipeDetails/> }/>
                 <Route path="/myrecipes/add" element={<AddRecipe/>} />
-                <Route path="/myrecipes/add/test" element={<Multiple/>} />
                 <Route path="/myrecipes/:id" element={<EditRecipe/>} />
                 <Route path="/" element={[
 

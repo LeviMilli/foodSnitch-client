@@ -8,33 +8,30 @@ function AddRecipe() {
 
 
     const { 
-        myRecipe, setMyRecipe, user
+        myRecipe, setMyRecipe, user, handleAdd
      }  = useContext(AppContext)
 
     
-    const [formValues, setFormValues] = useState([{ ingredients: ""}])
+    // const [formValues, setFormValues] = useState([{ ingredients: ""}])
 
 
-    let handleChange = (i, e) => {
-        let newFormValues = [...formValues];
-        newFormValues[i][e.target.name] = e.target.value;
-        setFormValues(newFormValues);
-     }
+    // let handleChange = (i, e) => {
+    //     let newFormValues = [...formValues];
+    //     newFormValues[i][e.target.name] = e.target.value;
+    //     setFormValues(newFormValues);
+    //  }
         
-    let addFormFields = () => {
-        setFormValues([...formValues, { name: "", email: "" }])
-     }
+    // let addFormFields = () => {
+    //     setFormValues([...formValues, { name: "", email: "" }])
+    //  }
     
-    let removeFormFields = (i) => {
-        let newFormValues = [...formValues];
-        newFormValues.splice(i, 1);
-        setFormValues(newFormValues)
-    }
+    // let removeFormFields = (i) => {
+    //     let newFormValues = [...formValues];
+    //     newFormValues.splice(i, 1);
+    //     setFormValues(newFormValues)
+    // }
 
-    const { 
-        handleAdd
-     }  = useContext(AppContext)
-
+   
 
      async function handleAddRecipe(event){
         console.log(event.target.title.value)
