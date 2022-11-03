@@ -51,7 +51,8 @@ function EditRecipe() {
   getData()
 }, [])
 
-// console.log(detail)
+
+console.log(detail)
 //   useEffect(() => {
 //     axios.get(`http://localhost:5005/api/myrecipe/${id}`, {withCredentials: true})
 //       .then((response) => {
@@ -69,31 +70,27 @@ function EditRecipe() {
   }
 
   function onEdit(event){
-    console.log(event)
+    console.log(event.target.title.value)
     event.preventDefault()
-    handleEdit(id, detail)
+    handleEdit(event.target)
   }
 
   if(!detail){
     return  <Spinner animation="border" variant="primary" />
   }
 
-console.log(detail.RecipeId._id)
-  async function handleEdit(id, detail){
-    let response = await axios.patch(`http://localhost:5005/api/myrecipe/${detail.RecipeId._id}`, detail
+console.log(detail._id)
+  async function handleEdit(event){
+      await axios.patch(`http://localhost:5005/api/myrecipe/${detail._id}`,
+     {title: `${event.title.value}`,
+     readyInMinutes: `${event.readyInMinutes.value}`
+    }
 , {withCredentials: true})
 
-    let updatedRecipe = detail.RecipeId.map((myrecipe) => {
-      if (myrecipe._id === id) {
-        myrecipe.title = response.data.title;
-        myrecipe.readyInMinutes = response.data.readyInMinutes
-      }
-      return myrecipe
-    })
-    // console.log(updatedRecipe)
-    setDetail(updatedRecipe)
 
-  }
+      }
+  
+  
 
   return (
     
