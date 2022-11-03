@@ -1,0 +1,31 @@
+.title {
+    width: 100%;
+    background-image: url(https://i.pinimg.com/originals/33/ef/8b/33ef8b9c0b902154a6cd4103a21275ef.jpg);
+    text-align: center;
+    background-size: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-bottom: solid black 2px;
+}
+
+
+.food {
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+    font-family: 'Space Mono', monospace;
+}

@@ -1,0 +1,40 @@
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+
+.divMain {
+ width: 100%;
+ background-image: linear-gradient(#cae97d, #234813);
+ height: 200px;
+ 
+}
+
+.inDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  font-size: 50px;
+  font-family: 'Space Mono', monospace;
+  color: white
+
+  ;
+
+}
+
+body {
+ background-image: linear-gradient(#fafcfb, #d4d8db);
+  height: 100%;
+ background-size: cover;
+}
+html {
+  height: 100%;
+}
+

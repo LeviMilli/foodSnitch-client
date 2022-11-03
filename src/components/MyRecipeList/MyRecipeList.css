@@ -1,0 +1,28 @@
+.add {
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    background: #fdd561 ;
+    margin-top: 20px;
+}
+
+.btnLeft {
+    margin-top: 20px;
+    margin-left: 10%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+
+}
+
+.btnEdit {
+    width: 100px;
+    background-color: #9ac43a;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px black;
+ 
+}
+
