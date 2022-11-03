@@ -4,19 +4,20 @@ import { useEffect, useState, useContext } from "react";
 import { AppContext } from "../../context/auth.context";
 import { Link } from "react-router-dom";
 import { Spinner, Button } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import "./EditRecipe.css";
 
 
 // import "./EditRecipe.css";
 
 function EditRecipe() {
-    const { 
+  const { 
 
         user, handleLogout
       }  = useContext(AppContext)
     
     
+  let navigate = useNavigate()
 
   let {id} = useParams()
   
@@ -80,14 +81,14 @@ console.log(detail)
   }
 
 console.log(detail._id)
+
   async function handleEdit(event){
       await axios.patch(`http://localhost:5005/api/myrecipe/${detail._id}`,
      {title: `${event.title.value}`,
      readyInMinutes: `${event.readyInMinutes.value}`
-    }
-, {withCredentials: true})
-
-
+    }, {withCredentials: true})
+      
+    navigate('/myrecipes')
       }
   
   
