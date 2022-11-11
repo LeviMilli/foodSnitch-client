@@ -78,8 +78,8 @@ export default function App() {
       // setUsers(userListResponse.data)
 
    
-  
-      let recipeResponse = await axios.get('http://localhost:5005/api/recipe', {withCredentials: true})
+      
+      let recipeResponse = await axios.get('https://foodsnitch.herokuapp.com/api/recipe', {withCredentials: true})
       setRecipe(recipeResponse.data)
 
       let myRecipeResponse = await axios.get('http://localhost:5005/api/myrecipe', {withCredentials: true})
@@ -147,25 +147,25 @@ async function handleLogOut(){
   setUser(null)
 }
 
-const handleGoogleSuccess = (data) => {
+// const handleGoogleSuccess = (data) => {
 
-setFetchingData(true)
+// setFetchingData(true)
 
-const {givenName, familyName, email, imageUrl, googleId} = data.profileObj
-let newUser = {
-  firstName: givenName,
-  lastName: familyName,
-  email,
-  image: imageUrl,
-  googleId
-}
+// const {givenName, familyName, email, imageUrl, googleId} = data.profileObj
+// let newUser = {
+//   firstName: givenName,
+//   lastName: familyName,
+//   email,
+//   image: imageUrl,
+//   googleId
+// }
 
-axios.post(`http:///localhost:5005/api/google/info`, newUser , {withCredentials: true})
-  .then((response) => {
-    setUser(response.data.data)
-    setFetchingData(false)
-  })
-}
+// axios.post(`http:///localhost:5005/api/google/info`, newUser , {withCredentials: true})
+//   .then((response) => {
+//     setUser(response.data.data)
+//     setFetchingData(false)
+//   })
+// }
 
  
 
