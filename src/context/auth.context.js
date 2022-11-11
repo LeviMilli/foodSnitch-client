@@ -13,13 +13,13 @@ function AppContextWrapper(props){
     const [myRecipe, setMyRecipe] = useState([])
     
     async function handleLogOut(){
-      await axios.get('http://localhost:5005/api/logout', {withCredentials: true})
+      await axios.get('https://foodsnitch.herokuapp.com/api/logout', {withCredentials: true})
       setUser(null)
     }
     
 
     async function handleEdit(id, detail){
-      let response = await axios.patch(`http://localhost:5005/api/recipe/${id}`, detail, {withCredentials: true})
+      let response = await axios.patch(`https://foodsnitch.herokuapp.com/api/recipe/${id}`, detail, {withCredentials: true})
   
       let updatedRecipe = myRecipe.map((recipe) => {
         if (recipe._id == id) {
@@ -38,7 +38,7 @@ function AppContextWrapper(props){
         event.preventDefault()
     
      
-        let response  = await axios.post(`http://localhost:5005/api/create`, {
+        let response  = await axios.post(`https://foodsnitch.herokuapp.com/api/create`, {
             UserId: user._id,
             RecipeId: id
         //   description: description.value,

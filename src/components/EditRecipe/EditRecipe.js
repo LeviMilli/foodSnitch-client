@@ -35,7 +35,7 @@ function EditRecipe() {
 
    
   
-      let recipeResponse = await axios.get(`http://localhost:5005/api/myrecipe/edit/${id}`, {withCredentials: true})
+      let recipeResponse = await axios.get(`https://foodsnitch.herokuapp.com/myrecipe/edit/${id}`, {withCredentials: true})
       setDetail(recipeResponse.data)
       
 
@@ -83,7 +83,7 @@ console.log(detail)
 console.log(detail._id)
 
   async function handleEdit(event){
-      await axios.patch(`http://localhost:5005/api/myrecipe/${detail._id}`,
+      await axios.patch(`https://foodsnitch.herokuapp.com/api/myrecipe/${detail._id}`,
      {title: `${event.title.value}`,
      readyInMinutes: `${event.readyInMinutes.value}`
     }, {withCredentials: true})

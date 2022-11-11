@@ -82,11 +82,11 @@ export default function App() {
       let recipeResponse = await axios.get('https://foodsnitch.herokuapp.com/api/recipe', {withCredentials: true})
       setRecipe(recipeResponse.data)
 
-      let myRecipeResponse = await axios.get('http://localhost:5005/api/myrecipe', {withCredentials: true})
+      let myRecipeResponse = await axios.get('https://foodsnitch.herokuapp.com/api/myrecipe', {withCredentials: true})
       console.log(myRecipeResponse.data)
       setMyRecipe(myRecipeResponse.data)
 
-      let response = await axios.get('http://localhost:5005/api/user', {withCredentials: true})  
+      let response = await axios.get('https://foodsnitch.herokuapp.com/api/user', {withCredentials: true})  
 
       setUser(response.data)
 
@@ -111,7 +111,7 @@ async function handleSignUp(event){
     password: event.target.password.value, 
   }
   try {
-    await axios.post('http://localhost:5005/api/signup', user, {withCredentials: true})
+    await axios.post('https://foodsnitch.herokuapp.com/api/signup', user, {withCredentials: true})
     navigate('/signin')
   }
   catch(err){
@@ -129,7 +129,7 @@ async function handleSignIn(event){
     password: event.target.password.value, 
   }
   try {
-    let response = await axios.post('http://localhost:5005/api/signin', user,{withCredentials: true})
+    let response = await axios.post('https://foodsnitch.herokuapp.com/api/signin', user,{withCredentials: true})
     setUser(response.data)
   }
   catch(err){
@@ -143,7 +143,7 @@ async function handleSignIn(event){
   
 
 async function handleLogOut(){
-  await axios.get('http://localhost:5005/api/logout', {withCredentials: true})
+  await axios.get('https://foodsnitch.herokuapp.com/api/logout', {withCredentials: true})
   setUser(null)
 }
 

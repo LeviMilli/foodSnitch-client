@@ -18,7 +18,7 @@ function RecipeDetails() {
 
       useEffect(() => {
         console.log('Detail Did Mount Effect')
-        axios.get(`http://localhost:5005/api/recipe/${id}`, {withCredentials: true})
+        axios.get(`https://foodsnitch.herokuapp.com/api/recipe/${id}`, {withCredentials: true})
           .then((response) => {
             console.log()
             setDetail(response.data)

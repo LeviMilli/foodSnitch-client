@@ -42,16 +42,16 @@ function AddRecipe() {
         const formData = new FormData();
         formData.append('image', image.files[0]);
     
-        let imageResponse = await axios.post('http://localhost:5005/api/upload', formData)
+        let imageResponse = await axios.post('https://foodsnitch.herokuapp.com/api/upload', formData)
      
-        let response  = await axios.post('http://localhost:5005/api/create/recipe', {
+        let response  = await axios.post('https://foodsnitch.herokuapp.com/api/create/recipe', {
         title: title.value,
           readyInMinutes: readyInMinutes.value,
           image: imageResponse.data.imageUrl, 
         
         })
 
-        let myresponse  = await axios.post('http://localhost:5005/api/create', {
+        let myresponse  = await axios.post('https://foodsnitch.herokuapp.com/api/create', {
             UserId: user._id,
             RecipeId: response.data._id
             })
